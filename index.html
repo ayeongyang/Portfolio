@@ -3,110 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>실험 및 실습 노트</title>
-    <style>
-        /* 아영님 표준 고정 틀 (가로 800px 및 중앙 정렬) */
-        body {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.8;
-            font-family: 'Malgun Gothic', sans-serif;
-            color: #222222;
-        }
-        h3 {
-            font-size: 1.25em;
-            color: #000000;
-            border-bottom: 1px solid #222222;
-            padding-bottom: 5px;
-            margin-top: 35px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 15px; 
-            position: relative; 
-        }
-        
-        .preview-link {
-            color: #0044cc;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        /* 옅은 회색 버전의 미리보기 상자 */
-        .preview-box {
-            display: none; 
-            position: absolute;
-            left: 0;
-            top: 28px;
-            width: 90%;
-            max-width: 420px;
-            background-color: #f1f1f1; /* 옅은 회색 */
-            color: #333333;            /* 회색 배경에 잘 보이는 진한 글씨 */
-            padding: 10px 14px;
-            border: 1px solid #cccccc; /* 깔끔한 테두리 선 */
-            border-radius: 6px;
-            font-size: 0.85em;
-            line-height: 1.4;
-            z-index: 10;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-        }
-
-        /* 💻 [PC 전용 스타일] 마우스 오버 시 표시 */
-        @media (pointer: fine) {
-            li:hover .preview-box {
-                display: block;
-            }
-        }
-    </style>
-
-    <script>
-        // 📱 [모바일·태블릿 전용 함수] 터치 환경에서만 두 번 터치 시스템 작동
-        function touchLink(event, boxId) {
-            if (window.matchMedia("(pointer: fine)").matches) {
-                return; 
-            }
-
-            var box = document.getElementById(boxId);
-            
-            if (box.style.display !== 'block') {
-                event.preventDefault();
-                
-                var allBoxes = document.querySelectorAll('.preview-box');
-                allBoxes.forEach(function(b) { b.style.display = 'none'; });
-                
-                box.style.display = 'block';
-            }
-        }
-
-        // 모바일에서 화면 빈 곳 터치하면 상자 닫히는 기능
-        document.addEventListener('click', function(e) {
-            if (!e.target.classList.contains('preview-link')) {
-                var allBoxes = document.querySelectorAll('.preview-box');
-                allBoxes.forEach(function(b) { b.style.display = 'none'; });
-            }
-        });
-    </script>
+    <title>실험노트</title>
 </head>
 <body>
 
-    <h3>🥼 실험 및 실습 노트 (Lab Notebook)</h3>
-    <ul>
-        <li>
-            [2026-04-30] <a href="lab/2026-spectro-0430/" class="preview-link" onclick="touchLink(event, 'l1')">[실습 01] 분광광도계를 이용한 식용색소의 농도 측정 및 정량 분석</a>
-            <div id="l1" class="preview-box">💡 UV-Vis 분광광도계를 사용해 미지 시료의 흡광도를 측정하고, Beer-Lambert 법칙을 이용해 농도를 정량하는 실습입니다.</div>
-        </li>
-        <li>
-            [2026-05-26] <a href="lab/2026-plasmid-0526/" class="preview-link" onclick="touchLink(event, 'l2')">[실습 02] 플라스미드 DNA 추출 및 전기영동 실습</a>
-            <div id="l2" class="preview-box">💡 Alkaline Lysis법을 이용해 대장균에서 플라스미드 DNA를 추출하고, Agarose gel 전기영동으로 크기를 확인하는 과정입니다.</div>
-        </li>
-        <li>
-            [2026-06-29] <a href="lab/2026-transform-0604/" class="preview-link" onclick="touchLink(event, 'l3')">[실습 03] 대장균 형질전환(Transformation) 및 효율 분석</a>
-            <div id="l3" class="preview-box">💡 DH5-alpha 대장균 수용성 세포를 직접 제작하고, pUC-GID 플라스미드를 넣어 형질전환 효율(5.796x10^5 CFU/µg)을 산출한 리포트입니다.</div>
-        </li>
-    </ul>
+    <h1>실험노트</h1>
 
 </body>
 </html>
